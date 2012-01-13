@@ -1,0 +1,49 @@
+= Quickbase Ruby Gem
+
+The Quickbase Gem provides integration access to the Intuit Quickbase API.
+
+== Dependencies
+
+* httparty
+* nokogiri
+* activesupport
+
+== Installation
+
+  gem install quickbase
+
+or, in your Gemfile
+
+  gem 'quickbase'
+
+== Quick Start Example
+
+  Quickbase::Connection.username = QUICKBASE_USERNAME
+  Quickbase::Connection.password = QUICKBASE_PASSWORD
+  Quickbase::Connection.org = QUICKBASE_ORGANIZATION # defaults to www
+
+  require "rubygems"
+  require "quickbase"
+
+  quickbase = Quickbase::Connection.new(:apptoken => "apptoken", :dbid => "dbid")
+
+  records = quickbase.api.do_query(:query => "{'3'.EX.'5'}", :slist => "3", :clist => "3.6.7")
+
+== More Examples
+
+  quickbase = Quickbase::Connection.new(:apptoken => "apptoken", :dbid => "dbid")
+
+  quickbase.api.do_query(:query => "{'1'.XEX.'123'}", :clist => "1.2", :friendly => "Name.Email", :slist => "1")
+
+  quickbase.api.add_record({:name => "John Smith", "6" => "New York City"})
+
+  quickbase.api.edit_record(6, {:city => "Washington"})
+
+  quickbase.api.delete_record(7)
+
+== Changes
+
+  01/13/2012
+  - Api was changed to API. Http was changed to HTTP.
+  - RSpec was added for testing.
+  - Replaced LibXML with Nokogiri
