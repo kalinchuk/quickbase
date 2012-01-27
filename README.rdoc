@@ -3,6 +3,7 @@
 The Quickbase Gem provides integration access to the Intuit Quickbase API.
 
 Artem Kalinchuk
+
 {Rosetta Stone}[http://rosettastone.com]
 
 == Dependencies
