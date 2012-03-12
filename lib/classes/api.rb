@@ -7,8 +7,9 @@ module Quickbase
     end
   
     # Documentation at http://www.quickbase.com/api-guide/do_query.html
-    def do_query(params)
-      params.merge!({:fmt => "structured"})
+    def do_query(params, fmt = 'structured', options = '')
+      params.merge!({:fmt => fmt})
+      params.merge!({:options => options})
       clist = params[:clist].to_s.split(".")
       friendly = params[:friendly].to_s.split(".")
       keys = friendly.empty? ? clist : friendly.map(&:to_sym)
