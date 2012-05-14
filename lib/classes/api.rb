@@ -21,8 +21,10 @@ module Quickbase
         array_of_fields = record.xpath("f[@type='array']/f")
         fields = array_of_fields.empty? ? record.xpath("f") : array_of_fields
         Hash[fields.to_enum(:each_with_index).collect{|field,index|
-          field.content = "" unless field.xpath("id").first.nil? # QuickBase adds ID to the tag if its empty
-          Hash[keys[index],field.content] 
+          field_val = ""
+          field_val_xpath = field.xpath("__content__").first
+          field_val = field_val_xpath.content unless field_val_xpath.nil?
+          Hash[keys[index],field_val]
         }.map(&:flatten)]
       }
     end
