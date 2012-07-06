@@ -5,6 +5,7 @@ require 'pp'
 
 require File.dirname(__FILE__) + "/../lib/quickbase.rb"
 
+#fill in your own quickbase account / database
 Quickbase::Connection.username = ""
 Quickbase::Connection.password = ""
 Quickbase::Connection.org = ""
@@ -70,6 +71,15 @@ describe Quickbase::API do
       
       results = quickbase.api.do_query(:query => "{'1'.XEX.'1'}", :clist => "1.2", :slist => "1")
       results.length.should_not == 0
+    end
+  end
+  
+  describe "do_query_return_xml" do
+    it "return xml" do
+      quickbase = Quickbase::Connection.new(:apptoken => apptoken, :dbid => dbid)
+      
+      xml = quickbase.api.do_query_return_nokogiri_obj(:query => "{'1'.XEX.'1'}", :clist => "1.2", :slist => "1")
+      xml.class.to_s.should == "Nokogiri::XML::Document"
     end
   end
 end

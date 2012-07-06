@@ -29,6 +29,16 @@ module Quickbase
       }
     end
     
+    def do_query_return_nokogiri_obj(params)
+      #useful method for debugging
+      params[:fmt] = 'structured' if params[:fmt].nil? or params[:fmt].empty?
+      clist = params[:clist].to_s.split(".")
+      friendly = params[:friendly].to_s.split(".")
+      keys = friendly.empty? ? clist : friendly.map(&:to_sym)
+      response = connection.http.post("API_DoQuery", Quickbase::Helper.hash_to_xml(params))
+      return response
+    end
+    
     # Documentation at http://www.quickbase.com/api-guide/add_record.html
     def add_record(fields)
       fields = Quickbase::Helper.generate_fields(fields)
