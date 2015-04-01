@@ -43,7 +43,14 @@ or, in your Gemfile
 
   quickbase.api.delete_record(7)
 
+== Setting a proxy
+  
+  quickbase = Quickbase::Connection.new(:apptoken => "apptoken", :dbid => "dbid", :http_proxy => "http://my.proxy.com:80")
+
 == Changes
+
+  04/01/2015
+  - Added proxy support
 
   01/13/2012
   - Api was changed to API. Http was changed to HTTP.

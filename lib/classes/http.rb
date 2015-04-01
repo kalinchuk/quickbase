@@ -10,7 +10,7 @@ module Quickbase
         def initialize(config)
           self.class.base_uri "https://#{config[:org]}.quickbase.com"
           instance_variable_set "@qb_params", {:dbid => "main"}
-          http_proxy = qb_params[:http_proxy] || ENV['http_proxy']
+          http_proxy = config[:http_proxy] || ENV['http_proxy']
           setup_proxy(http_proxy) if http_proxy
 
           response = post("API_Authenticate", Quickbase::Helper.hash_to_xml(config))
