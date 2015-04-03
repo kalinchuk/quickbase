@@ -1,3 +1,4 @@
+require 'httparty'
 module Quickbase
   class HTTP
     include HTTParty
