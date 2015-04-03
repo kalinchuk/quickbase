@@ -1,9 +1,7 @@
-gem "activerecord"
 require "active_record"
 require "cgi"
 require 'pp'
-
-require File.dirname(__FILE__) + "/../lib/quickbase.rb"
+require 'spec_helper'
 
 #fill in your own quickbase account / database
 Quickbase::Connection.username = ""

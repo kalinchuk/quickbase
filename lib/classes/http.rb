@@ -2,14 +2,15 @@ module Quickbase
   class HTTP
     include HTTParty
     attr_accessor :qb_params
+
     def initialize(config)
       self.class.base_uri "https://#{config[:org]}.quickbase.com"
       instance_variable_set "@qb_params", {:dbid => "main"}
+
       http_proxy = config[:http_proxy] || ENV['http_proxy']
       setup_proxy(http_proxy) if http_proxy
 
-      response = post("API_Authenticate", Quickbase::Helper.hash_to_xml(config))
-      qb_params[:ticket] = response.xpath("//ticket").first.content
+      qb_params[:ticket] = auth_ticket
       qb_params[:apptoken] = config[:apptoken]
       qb_params[:dbid] = config[:dbid]
     end
@@ -26,6 +27,11 @@ module Quickbase
     end
 
     private
+    def auth_ticket
+      response = post("API_Authenticate", Quickbase::Helper.hash_to_xml(config))
+      response.xpath("//ticket").first.content
+    end
+
     def no_proxy?
       host = URI.parse(self.class.base_uri).host
       ENV.fetch('no_proxy','').split(',').any? do |pattern|
@@ -44,14 +50,11 @@ module Quickbase
     end
 
     def error_handler(response)
-      case response.xpath("//errcode").first.content.to_i
-        when 0
-          return true
-        else
-          errcode = response.xpath('//errcode').first.content
-          errtext = response.xpath('//errtext').first.content
-          raise "#{errcode}: #{errtext}"
-          return false
+      errcode = response.xpath("//errcode").first.content
+
+      unless errcode.to_i.zero?
+        errtext = response.xpath('//errtext').first.content
+        raise "#{errcode}: #{errtext}"
       end
     end
   end

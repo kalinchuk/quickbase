@@ -47,6 +47,8 @@ or, in your Gemfile
   
   quickbase = Quickbase::Connection.new(:apptoken => "apptoken", :dbid => "dbid", :http_proxy => "http://my.proxy.com:80")
 
+  the sytem http_proxy, https_proxy and no_proxy environment variable will be respected if you don't explicity pass a proxy
+
 == Changes
 
   04/01/2015
