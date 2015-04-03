@@ -10,7 +10,7 @@ module Quickbase
       http_proxy = config[:http_proxy] || ENV['http_proxy']
       setup_proxy(http_proxy) if http_proxy
 
-      qb_params[:ticket] = auth_ticket
+      qb_params[:ticket] = auth_ticket config
       qb_params[:apptoken] = config[:apptoken]
       qb_params[:dbid] = config[:dbid]
     end
@@ -27,7 +27,7 @@ module Quickbase
     end
 
     private
-    def auth_ticket
+    def auth_ticket(config)
       response = post("API_Authenticate", Quickbase::Helper.hash_to_xml(config))
       response.xpath("//ticket").first.content
     end
