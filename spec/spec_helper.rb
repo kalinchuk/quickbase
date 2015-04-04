@@ -6,8 +6,4 @@ SimpleCov.start do
   add_filter "/spec/"
 end
 
-Dir[File.expand_path(File.join(File.dirname(__FILE__), "..", "lib", "**", '*.rb'))].each {|f|
-  f
-  require f
-}
-#require File.dirname(__FILE__) + "/../lib/quickbase.rb"
+Dir[File.expand_path(File.join(File.dirname(__FILE__), "..", "lib", "**", '*.rb'))].each {|f| require f }
