@@ -59,8 +59,4 @@ module Quickbase
       end
     end
   end
-
-  class Http < HTTP
-    puts "Class Http will be deprecated. Please use HTTP instead."
-  end
 end

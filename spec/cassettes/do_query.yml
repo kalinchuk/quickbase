@@ -1,0 +1,166 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://intuitcorp.quickbase.com/db/main
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0"?>
+        <qdbapi>
+          <username>username</username>
+          <password>password</password>
+          <hours/>
+          <apptoken>apptoken</apptoken>
+          <dbid>dbid</dbid>
+          <org>intuitcorp</org>
+          <http_proxy/>
+          <dbid>main</dbid>
+        </qdbapi>
+    headers:
+      Content-Length:
+      - '264'
+      Content-Type:
+      - application/xml
+      Quickbase-Action:
+      - API_Authenticate
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '262'
+      Content-Type:
+      - application/xml
+      Server:
+      - ''
+      Set-Cookie:
+      - BIGipServer~SBG_Prod~lvpprdqbase.intuit.com_81=rd2o00000000000fo81;
+        path=/
+      - TICKET=8_bmbjfecz7_b2b6gz_k_a_dvfdnxednsc7qr7tvbhs99cf;
+        path=/; secure; HttpOnly
+      - luid=5871.dtjm; expires=Tue, 19-Jan-2038 00:00:00 GMT; path=/
+      - ptest=148301; expires=Tue, 19-Jan-2038 00:00:00 GMT; path=/
+      - sbIID=I3d3937; path=/
+      - scache=Oct 25 2016 19:51:25_3; expires=Tue, 19-Jan-2038 00:00:00 GMT; path=/
+      - stest=1478801; path=/
+      Quickbase-Errcode:
+      - '0'
+      Quickbase-Errtext:
+      - No error
+      X-Powered-By:
+      - ''
+      Date:
+      - Thu, 10 Nov 2016 19:37:37 GMT
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" ?>\r\n<qdbapi>\n\t<action>API_Authenticate</action>\r\n\t<errcode>0</errcode>\r\n\t<errtext>No
+        error</errtext>\r\n\t<ticket>8_bmbjfecz7_b2b6gz_k_a_dvfdnxednsc7qr7tvbhs99cf</ticket>\r\n\t<userid>58781911.dtjm</userid>\r\n</qdbapi>\r\n"
+    http_version:
+  recorded_at: Thu, 10 Nov 2016 19:37:38 GMT
+- request:
+    method: post
+    uri: https://intuitcorp.quickbase.com/db/dbid
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0"?>
+        <qdbapi>
+          <query>{'1'.XEX.'1'}</query>
+          <clist>1.2</clist>
+          <slist>1</slist>
+          <fmt>structured</fmt>
+          <dbid>dbid</dbid>
+          <ticket>8_bmbjfecz7_b2b6gz_k_a_dvfdnxednsc7qr7tvbhs99cf</ticket>
+          <apptoken>apptoken</apptoken>
+        </qdbapi>
+    headers:
+      Content-Length:
+      - '308'
+      Content-Type:
+      - application/xml
+      Quickbase-Action:
+      - API_DoQuery
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Length:
+      - '1545389'
+      Content-Type:
+      - application/xml
+      Server:
+      - ''
+      Set-Cookie:
+      - BIGipServer~SBG_Prod~lvpprdqbase.intuit.com_81=rd2o00000000000fo81;
+        path=/
+      - luid=58781911.dtjm; expires=Tue, 19-Jan-2038 00:00:00 GMT; path=/
+      - ptest=1478806658301; expires=Tue, 19-Jan-2038 00:00:00 GMT; path=/
+      - sbIID=I3d39vxr9c; path=/
+      - scache=Oct 25 2016 19:51:25_3; expires=Tue, 19-Jan-2038 00:00:00 GMT; path=/
+      - stest=1478806658301; path=/
+      Tid:
+      - I3d39vxr9c
+      Quickbase-Errcode:
+      - '0'
+      Quickbase-Errtext:
+      - No error
+      X-Powered-By:
+      - ''
+      Date:
+      - Thu, 10 Nov 2016 19:37:37 GMT
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" ?>\r\n<qdbapi>\n\t<action>API_DoQuery</action>\r\n\t<errcode>0</errcode>\r\n\t<errtext>No
+        error</errtext>\r\n    <qid>-1</qid>\r\n    <qname></qname>\r\n    <table>\r\n
+        \     <name>Fraud Companies</name>\r\n      <original>\r\n        <table_id>dbid</table_id>\r\n\t\t
+        <app_id>bffskqkt6</app_id>\r\n        <cre_date>1277226723734</cre_date>\r\n
+        \       <mod_date>1478805538595</mod_date>\r\n        <next_record_id>399166</next_record_id>\r\n
+        \       <next_field_id>46</next_field_id>\r\n        <next_query_id>7</next_query_id>\r\n
+        \       <def_sort_fid>6</def_sort_fid>\r\n        <def_sort_order>1</def_sort_order>\r\n
+        \   <key_fid>3</key_fid>\r\n        <single_record_name>Fraud Record</single_record_name>\r\n
+        \       <plural_record_name>Fraud Records</plural_record_name>\r\n      </original>\r\n
+        \     <queries>\r\n        <query id=\"6\">\r\n          <qyname>Breakdown
+        of Fraud Concentration</qyname>\r\n          <qytype>chart</qytype>\r\n          <qyclst>15</qyclst>\r\n
+        \         <qyslst>39</qyslst>\r\n          <qyopts>so-A.gb-V.ag-S.dlb-off.pie.</qyopts>\r\n\t\t
+        \ <qycalst>0.0</qycalst>\r\n        </query>\r\n        <query id=\"1\">\r\n
+        \         <qyname>List All</qyname>\r\n          <qytype>table</qytype>\r\n\t\t
+        \ <qycalst>0.0</qycalst>\r\n        </query>\r\n        <query id=\"2\">\r\n
+        \         <qyname>List Changes</qyname>\r\n          <qytype>table</qytype>\r\n
+        \         <qydesc>Sorted by Date Modified</qydesc>\r\n          <qyslst>2</qyslst>\r\n
+        \         <qyopts>so-D.onlynew.nos.</qyopts>\r\n\t\t  <qycalst>0.0</qycalst>\r\n
+        \       </query>\r\n        <query id=\"5\">\r\n          <qyname>Recent Fraud</qyname>\r\n
+        \         <qytype>table</qytype>\r\n          <qycrit>({&#039;13&#039;.EX.&#039;yesterday&#039;})</qycrit>\r\n
+        \         <qyclst>13.6.14.9.12</qyclst>\r\n          <qyopts>nos.</qyopts>\r\n\t\t
+        \ <qycalst>0.0</qycalst>\r\n        </query>\r\n      </queries>\r\n      <fields>\r\n
+        \       <field id=\"1\" field_type=\"timestamp\" base_type=\"int64\" role=\"created\">\r\n
+        \         <label>Date Created</label>\n          <nowrap>1</nowrap>\n          <bold>0</bold>\n
+        \         <required>0</required>\n          <appears_by_default>0</appears_by_default>\n
+        \         <find_enabled>0</find_enabled>\n          <allow_new_choices>0</allow_new_choices>\n
+        \         <sort_as_given>0</sort_as_given>\n          <carrychoices>1</carrychoices>\n
+        \         <foreignkey>0</foreignkey>\n          <unique>0</unique>\n          <doesdatacopy>0</doesdatacopy>\n
+        \         <fieldhelp></fieldhelp>\n          <allowInRecTemplate>0</allowInRecTemplate>\n
+        \         <display_time>1</display_time>\n          <display_relative>0</display_relative>\n
+        \         <display_month>number</display_month>\n          <default_today>0</default_today>\n
+        \         <display_dow>0</display_dow>\n          <display_zone>0</display_zone>\n
+        \       </field>\r\n        <field id=\"2\" field_type=\"timestamp\" base_type=\"int64\"
+        role=\"modified\">\r\n          <label>Date Modified</label>\n          <nowrap>1</nowrap>\n
+        \         <bold>0</bold>\n          <required>0</required>\n          <appears_by_default>0</appears_by_default>\n
+        \         <find_enabled>0</find_enabled>\n          <allow_new_choices>0</allow_new_choices>\n
+        \         <sort_as_given>0</sort_as_given>\n          <carrychoices>1</carrychoices>\n
+        \         <foreignkey>0</foreignkey>\n          <unique>0</unique>\n          <doesdatacopy>0</doesdatacopy>\n
+        \         <fieldhelp></fieldhelp>\n          <allowInRecTemplate>0</allowInRecTemplate>\n
+        \         <display_time>1</display_time>\n          <display_relative>0</display_relative>\n
+        \         <display_month>number</display_month>\n          <default_today>0</default_today>\n
+        \         <display_dow>0</display_dow>\n          <display_zone>0</display_zone>\n
+        \       </field>\r\n      </fields>\r\n<lastluserid>0</lastluserid>\r\n      <records>\r\n
+        \       <record>\r\n          <f id=\"1\">1280355979800</f>\r\n          <f
+        id=\"2\">1280355979800</f>\r\n          <update_id>1280355979800</update_id>\r\n
+        \       </record>\r\n        <record>\r\n          <f id=\"1\">1280355979800</f>\r\n
+        \         <f id=\"2\">1280355979800</f>\r\n          <update_id>1280355979800</update_id>\r\n
+        \       </record>\r\n      </records>\r\n    </table>\r\n</qdbapi>\r\n"
+    http_version:
+  recorded_at: Thu, 10 Nov 2016 19:37:38 GMT
+recorded_with: VCR 2.9.3
