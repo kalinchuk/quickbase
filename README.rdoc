@@ -44,12 +44,19 @@ or, in your Gemfile
   quickbase.api.delete_record(7)
 
 == Setting a proxy
-  
+
   quickbase = Quickbase::Connection.new(:apptoken => "apptoken", :dbid => "dbid", :http_proxy => "http://my.proxy.com:80")
 
   the sytem http_proxy, https_proxy and no_proxy environment variable will be respected if you don't explicity pass a proxy
 
 == Changes
+
+  11/11/2016 - version 0.1.0
+  - fix security vulnerabilities to xml injections
+  - add vcr to tests
+  - add MIT license
+  - remove deprecated classes
+  - fix warnings with gemspec
 
   04/01/2015
   - Added proxy support

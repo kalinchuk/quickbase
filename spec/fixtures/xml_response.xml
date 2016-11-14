@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects type="array">
+  <object>
+    <qdbapi>
+      <action>API_DoQuery</action>
+      <errcode>0</errcode>
+      <errtext>No error</errtext>
+      <qid>-1</qid>
+      <qname nil="true"/>
+      <table>
+        <name>Fraud Companies</name>
+        <original>
+          <table-id>dbid</table-id>
+          <app-id>bffskqkt6</app-id>
+          <cre-date>1277226723734</cre-date>
+          <mod-date>1478805538595</mod-date>
+          <next-record-id>399166</next-record-id>
+          <next-field-id>46</next-field-id>
+          <next-query-id>7</next-query-id>
+          <def-sort-fid>6</def-sort-fid>
+          <def-sort-order>1</def-sort-order>
+          <key-fid>3</key-fid>
+          <single-record-name>Fraud Record</single-record-name>
+          <plural-record-name>Fraud Records</plural-record-name>
+        </original>
+        <queries>
+          <query type="array">
+            <query>
+              <qyname>Breakdown of Fraud Concentration</qyname>
+              <qytype>chart</qytype>
+              <qyclst>15</qyclst>
+              <qyslst>39</qyslst>
+              <qyopts>so-A.gb-V.ag-S.dlb-off.pie.</qyopts>
+              <qycalst>0.0</qycalst>
+              <id>6</id>
+            </query>
+            <query>
+              <qyname>List All</qyname>
+              <qytype>table</qytype>
+              <qycalst>0.0</qycalst>
+              <id>1</id>
+            </query>
+            <query>
+              <qyname>List Changes</qyname>
+              <qytype>table</qytype>
+              <qydesc>Sorted by Date Modified</qydesc>
+              <qyslst>2</qyslst>
+              <qyopts>so-D.onlynew.nos.</qyopts>
+              <qycalst>0.0</qycalst>
+              <id>2</id>
+            </query>
+            <query>
+              <qyname>Recent Fraud</qyname>
+              <qytype>table</qytype>
+              <qycrit>({'13'.EX.'yesterday'})</qycrit>
+              <qyclst>13.6.14.9.12</qyclst>
+              <qyopts>nos.</qyopts>
+              <qycalst>0.0</qycalst>
+              <id>5</id>
+            </query>
+          </query>
+        </queries>
+        <fields>
+          <field type="array">
+            <field>
+              <label>Date Created</label>
+              <nowrap>1</nowrap>
+              <bold>0</bold>
+              <required>0</required>
+              <appears-by-default>0</appears-by-default>
+              <find-enabled>0</find-enabled>
+              <allow-new-choices>0</allow-new-choices>
+              <sort-as-given>0</sort-as-given>
+              <carrychoices>1</carrychoices>
+              <foreignkey>0</foreignkey>
+              <unique>0</unique>
+              <doesdatacopy>0</doesdatacopy>
+              <fieldhelp nil="true"/>
+              <allowInRecTemplate>0</allowInRecTemplate>
+              <display-time>1</display-time>
+              <display-relative>0</display-relative>
+              <display-month>number</display-month>
+              <default-today>0</default-today>
+              <display-dow>0</display-dow>
+              <display-zone>0</display-zone>
+              <id>1</id>
+              <field-type>timestamp</field-type>
+              <base-type>int64</base-type>
+              <role>created</role>
+            </field>
+            <field>
+              <label>Date Modified</label>
+              <nowrap>1</nowrap>
+              <bold>0</bold>
+              <required>0</required>
+              <appears-by-default>0</appears-by-default>
+              <find-enabled>0</find-enabled>
+              <allow-new-choices>0</allow-new-choices>
+              <sort-as-given>0</sort-as-given>
+              <carrychoices>1</carrychoices>
+              <foreignkey>0</foreignkey>
+              <unique>0</unique>
+              <doesdatacopy>0</doesdatacopy>
+              <fieldhelp nil="true"/>
+              <allowInRecTemplate>0</allowInRecTemplate>
+              <display-time>1</display-time>
+              <display-relative>0</display-relative>
+              <display-month>number</display-month>
+              <default-today>0</default-today>
+              <display-dow>0</display-dow>
+              <display-zone>0</display-zone>
+              <id>2</id>
+              <field-type>timestamp</field-type>
+              <base-type>int64</base-type>
+              <role>modified</role>
+            </field>
+          </field>
+        </fields>
+        <lastluserid>0</lastluserid>
+        <records>
+          <record type="array">
+            <record>
+              <f type="array">
+                <f>
+                  <__content__>1280355979800</__content__>
+                  <id>1</id>
+                </f>
+                <f>
+                  <__content__>1280355979800</__content__>
+                  <id>2</id>
+                </f>
+              </f>
+              <update-id>1280355979800</update-id>
+            </record>
+            <record>
+              <f type="array">
+                <f>
+                  <__content__>1280355979800</__content__>
+                  <id>1</id>
+                </f>
+                <f>
+                  <__content__>1280355979800</__content__>
+                  <id>2</id>
+                </f>
+              </f>
+              <update-id>1280355979800</update-id>
+            </record>
+          </record>
+        </records>
+      </table>
+    </qdbapi>
+  </object>
+</objects>

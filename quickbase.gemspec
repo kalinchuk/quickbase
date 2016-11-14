@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = %q{quickbase}
-  s.version = "0.0.12"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["Artem Kalinchuk"]
@@ -13,6 +13,8 @@ Gem::Specification.new do |s|
   s.rubyforge_project = %q{quickbase}
   s.rubygems_version = %q{1.8.5}
   s.summary = %q{Quickbase Ruby Gem}
+  s.homepage = 'https://github.com/kalinchuk/quickbase'
+  s.license = 'MIT'
   s.add_dependency(%q<nokogiri>, [">= 0"])
   s.add_dependency(%q<httparty>, [">= 0"])
   s.add_dependency(%q<activesupport>, [">= 0"])

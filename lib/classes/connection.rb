@@ -23,14 +23,14 @@ module Quickbase
     end
 
     def instantiate
-      config = {
-          :username => username,
-          :password => password,
-          :hours => hours,
-          :apptoken => apptoken,
-          :dbid => dbid,
-          :org => org,
-          :http_proxy => http_proxy
+      {
+        username: username,
+        password: password,
+        hours: hours,
+        apptoken: apptoken,
+        dbid: dbid,
+        org: org,
+        http_proxy: http_proxy
       }
     end
 
