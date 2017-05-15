@@ -1,9 +1,9 @@
 module Quickbase
   class Connection
     class << self
-      attr_writer :username, :password, :hours, :apptoken, :dbid, :org, :http_proxy
+      attr_writer :username, :password, :hours, :apptoken, :dbid, :org, :http_proxy, :usertoken
     end
-    attr_reader :username, :password, :hours, :apptoken, :dbid, :org, :http_proxy
+    attr_reader :username, :password, :hours, :apptoken, :dbid, :org, :http_proxy, :usertoken
 
     def self.expectant_reader(*attributes)
       attributes.each do |attribute|
@@ -13,10 +13,10 @@ module Quickbase
         end
       end
     end
-    expectant_reader :username, :password, :hours, :apptoken, :dbid, :org, :http_proxy
+    expectant_reader :username, :password, :hours, :apptoken, :dbid, :org, :http_proxy, :usertoken
 
     def initialize(options = {})
-      [:username, :password, :hours, :apptoken, :dbid, :org, :http_proxy].each do |attr|
+      [:username, :password, :hours, :apptoken, :dbid, :org, :http_proxy, :usertoken].each do |attr|
         instance_variable_set "@#{attr}", (options[attr].nil? ? Quickbase::Connection.send(attr) : options[attr])
       end
       instance_variable_set "@org", "www" if org.nil?
@@ -30,7 +30,8 @@ module Quickbase
         apptoken: apptoken,
         dbid: dbid,
         org: org,
-        http_proxy: http_proxy
+        http_proxy: http_proxy,
+        usertoken: usertoken
       }
     end
 
