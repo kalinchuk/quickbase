@@ -11,9 +11,8 @@ module Quickbase
       http_proxy = config[:http_proxy] || ENV['http_proxy']
       setup_proxy(http_proxy) if http_proxy
 
-      qb_params[:ticket] = auth_ticket config
-      qb_params[:apptoken] = config[:apptoken]
       qb_params[:dbid] = config[:dbid]
+      qb_params[:usertoken] = config[:usertoken]
     end
 
     def post(quickbase_action, params = [])
